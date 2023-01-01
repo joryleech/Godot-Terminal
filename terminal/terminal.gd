@@ -9,7 +9,7 @@ var application: Node
 var path = "res://terminal/applications/"
 
 func run_command(command : String):
-	add_to_log(command)
+	add_to_log("> " + command)
 	var split_command :	Array
 	split_command = command.split(" ")
 	if(split_command.size() > 0):
@@ -34,6 +34,7 @@ func find_application(application_id):
 		return load(path+application_id+".gd").new()
 	else:
 		return null
+
 func add_to_log(statement: String):
 	log.push_back(statement)
 	emit_signal("print_log", statement)

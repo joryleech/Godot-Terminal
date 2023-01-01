@@ -6,7 +6,7 @@ func _init():
 	
 func run(terminal : Terminal, params : Array):
 	var files = DirAccess.get_files_at(terminal.path)
-	if("verbose" in params):
+	if(is_verbose(params)):
 		for file in files:
 			if(".gd" in file):
 				var application = load(terminal.path+file).new()
@@ -16,3 +16,10 @@ func run(terminal : Terminal, params : Array):
 		for file in files:
 			if(".gd" in file):
 				terminal.add_to_log(file.replace(".gd",""))
+				
+func is_verbose(params):
+	var verbose_tags = ['verbose','-v']
+	for param in params:
+		if param.to_lower() in verbose_tags:
+			return true
+	return false

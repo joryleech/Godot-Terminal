@@ -1,6 +1,6 @@
 extends TerminalApplication
 
-func _ready():
+func _init():
 	name="Test"
 	description="Print Test"
 	

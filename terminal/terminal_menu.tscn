@@ -38,8 +38,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/Logs"]
 layout_mode = 2
-text = "* fewfe
-* ifejwfiejw"
 
 [node name="TerminalInputContainer" type="PanelContainer" parent="."]
 layout_mode = 1
