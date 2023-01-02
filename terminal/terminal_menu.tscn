@@ -28,16 +28,22 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.8
-offset_bottom = -0.400024
-follow_focus = true
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+offset_right = -0.0460205
+offset_bottom = -0.185974
 
-[node name="Logs" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Label" type="TextEdit" parent="ScrollContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/Logs"]
-layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "test jifwejfiejwf
+feowf
+ew"
+editable = false
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+scroll_smooth = true
+scroll_fit_content_height = true
 
 [node name="TerminalInputContainer" type="PanelContainer" parent="."]
 layout_mode = 1
