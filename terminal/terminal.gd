@@ -38,3 +38,6 @@ func find_application(application_id):
 func add_to_log(statement: String):
 	log.push_back(statement)
 	emit_signal("print_log", statement)
+	
+func add_error(statement: String):
+	add_to_log(statement)

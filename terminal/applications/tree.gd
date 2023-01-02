@@ -8,10 +8,18 @@ func _init():
 	
 func run(terminal : Terminal, params : Array):
 	_terminal = terminal
-	var root_node = _terminal.get_tree().get_current_scene()
-	print(root_node)
-	print("Test")
-	draw_branch(root_node, 0, params)
+	var selected_node_id = get_target_node(params)
+	var root_node = null
+	if(selected_node_id):	
+		root_node = instance_from_id(int(selected_node_id))	 
+	else:
+		root_node = _terminal.get_tree().get_current_scene()
+		
+	if(root_node):
+		draw_branch(root_node, 0, params)
+	else:
+		terminal.add_error("[Tree] Failed to access node: "+selected_node_id)
+	
 	
 func draw_branch(node : Node, depth : int, params : Array):
 	draw_node(node, depth, params)
@@ -32,7 +40,14 @@ func generate_depth_signifier(depth, params):
 	
 func get_depth_delimiter():
 	return "    "
-	
+
+func get_target_node(params):
+	var pb = breakdown_params(params)
+	for p in pb:
+		#TODO catch two part flags
+		if !("-" in p[0]):
+			return p[0]
+		
 func is_recursive(params):
 	#TODO CACHE
 	var recursive_tags = ['-r']
