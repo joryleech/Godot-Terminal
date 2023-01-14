@@ -6,7 +6,7 @@ signal terminal_signal(application_id : String, params : Object)
 
 var log : Array
 var application: Node
-var path = "res://terminal/applications/"
+var path = "res://addons/terminal/applications/"
 
 func run_command(command : String):
 	add_to_log("> " + command)

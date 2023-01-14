@@ -12,7 +12,7 @@ _global_script_classes=[{
 "base": "RefCounted",
 "class": &"TerminalApplication",
 "language": &"GDScript",
-"path": "res://terminal/terminal_application.gd"
+"path": "res://addons/terminal/terminal_application.gd"
 }]
 _global_script_class_icons={
 "TerminalApplication": ""
@@ -21,13 +21,17 @@ _global_script_class_icons={
 [application]
 
 config/name="Terminal"
-run/main_scene="res://terminal/terminal_menu.tscn"
+run/main_scene="res://addons/terminal/terminal_menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Terminal="*res://terminal/terminal.gd"
+Terminal="*res://addons/terminal/terminal.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terminal/plugin.cfg")
 
 [rendering]
 

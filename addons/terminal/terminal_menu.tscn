@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn4ufwtwnvhmq"]
+[gd_scene load_steps=3 format=3 uid="uid://ckc1sg17rg3xr"]
 
-[ext_resource type="Script" path="res://terminal/terminal_menu.gd" id="1_7l8xm"]
+[ext_resource type="Script" path="res://addons/terminal/terminal_menu.gd" id="1_x7sc3"]
 
 [sub_resource type="GDScript" id="GDScript_6h83f"]
 script/source = "extends TextEdit
@@ -21,7 +21,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource("1_7l8xm")
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7sc3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -35,6 +37,7 @@ offset_bottom = -0.185974
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+text = "	"
 editable = false
 draw_control_chars = true
 draw_tabs = true
