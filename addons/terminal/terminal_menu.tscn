@@ -24,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7sc3")
+menuOpenInputAxis = "toggle_terminal_menu"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
