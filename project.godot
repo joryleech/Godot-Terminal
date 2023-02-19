@@ -8,16 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "RefCounted",
-"class": &"TerminalApplication",
-"language": &"GDScript",
-"path": "res://addons/terminal/terminal_application.gd"
-}]
-_global_script_class_icons={
-"TerminalApplication": ""
-}
-
 [application]
 
 config/name="Terminal"

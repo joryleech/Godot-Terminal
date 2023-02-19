@@ -9,6 +9,7 @@ func run(terminal : Terminal, params : Array):
 	if(is_verbose(params)):
 		for file in files:
 			if(".gd" in file):
+				var file_name : String = file.replace('.remap', '') #Godot 4 production, renames files when compiled, automapped in load function
 				var application = load(terminal.path+file).new()
 				var help_text = application.name + " - " + application.description
 				terminal.add_to_log(help_text)

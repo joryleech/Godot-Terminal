@@ -8,6 +8,10 @@ var log : Array
 var application: Node
 var path = "res://addons/terminal/applications/"
 
+var settings : Dictionary = {
+	
+}
+
 func run_command(command : String):
 	add_to_log("> " + command)
 	var split_command :	Array
@@ -41,3 +45,13 @@ func add_to_log(statement: String):
 	
 func add_error(statement: String):
 	add_to_log(statement)
+	
+func get_setting(key : String, dangerous = false):
+	if(dangerous):
+		settings.get(key)
+	else:	
+		if(settings.has(key)):
+			return settings.get(key)
+			
+func set_setting(key : String, value):
+	settings[key] = value
