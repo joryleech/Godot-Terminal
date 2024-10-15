@@ -25,6 +25,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7sc3")
 menuOpenInputAxis = "toggle_terminal_menu"
+menuUpAxis = "terminal_up"
+menuClearAxis = "terminal_clear"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -40,11 +42,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "	"
 editable = false
+scroll_smooth = true
+scroll_fit_content_height = true
 draw_control_chars = true
 draw_tabs = true
 draw_spaces = true
-scroll_smooth = true
-scroll_fit_content_height = true
 
 [node name="TerminalInputContainer" type="PanelContainer" parent="."]
 layout_mode = 1
