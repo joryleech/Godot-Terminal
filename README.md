@@ -29,7 +29,7 @@ Once the plugin is installed, you can add a terminal to your game by using the p
 	* Menu Open Input Axis - Toggle the Menu open and close
 	* Menu Up Axis - Scroll through history in the input box, to use previous commands easily
 	* Menu Clear Axis - Clear current terminal
-	* 
+
 ### Running Commands
 
 The terminal accepts player input as commands. 
@@ -88,6 +88,44 @@ Prints the node tree, either from root or given node
 **Parameters**
 * Node ID - The id of the node to start traversing the tree
 * -r - Recursively traverse tree
+### Echo
+Prints the parameters passed to it
+### Func 
+Selects and node and runs a function on that node
+
+```
+func [options] <node_id_or_name> <method_name>
+```
+By default the node is selected by ID
+the following flags are available:
+* -t : Select the node by type, will select all nodes with the type or inherited from type (ex: Node3D, CharacterController3d, or custom types)
+* -n : Select node by name
+
+### Set
+Sets the variable in the terminal, so that it can be accessed with $ accessor in future command
+
+*Ex:*
+```
+set variable 1
+echo $variable
+> 1
+```
+
+### Spawn
+Find a scene file in the `Res://` folder and spawn it in the current scene
+
+*usage*
+```
+spawn <SceneFileName> [flags] [flag_options]
+```
+*Flags:*
+* -h : Print the help message
+* -s : Search for game object in all files (slow), ex: -s scene_file",
+* -f : Choose item by filename ex: -f /scenes/scene_file",
+* -p : Select the position the node should be spawned with the following parameters X Y Z",
+* -n : Select another node the spawned node should copy the transform of.
+
+
 ## Contribution
 
 Feel free to fork this repository, submit issues, and contribute improvements or additional features.
