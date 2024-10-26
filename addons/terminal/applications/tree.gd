@@ -44,12 +44,10 @@ func get_depth_delimiter():
 func get_target_node(params):
 	var pb = breakdown_params(params)
 	for p in pb:
-		#TODO catch two part flags
 		if !("-" in p[0]):
 			return p[0]
 		
 func is_recursive(params):
-	#TODO CACHE
 	var recursive_tags = ['-r']
 	for param in params:
 		if param.to_lower() in recursive_tags:

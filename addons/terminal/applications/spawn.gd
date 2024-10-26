@@ -124,12 +124,10 @@ func get_transform(terminal : Terminal, params : Array, flags : Dictionary):
 
 func spawn_item(terminal : Terminal, items : Array[PackedScene], transform = null):
 	for item in items:
-		var instanciated_item : Node = item.instantiate(
-			
-		)
+		var instanciated_item : Node = item.instantiate()
 		if(transform && instanciated_item is Node3D):
 			(instanciated_item as Node3D).transform = transform
-		terminal.get_tree().get_root().add_child(instanciated_item)
+		terminal.get_tree().current_scene.add_child(instanciated_item)
 	
 func is_parameter_flag(parameter : String):
 	return parameter.begins_with("-")
